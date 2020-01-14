@@ -257,6 +257,7 @@ uint32_t layer_state_set_kb(uint32_t state) {
         webusb_send(event, sizeof(event));
     }
 #endif
+#ifndef DISABLE_FRONT_LEDS
     switch (layer) {
         case 1:
             planck_ez_left_led_on();
@@ -271,6 +272,7 @@ uint32_t layer_state_set_kb(uint32_t state) {
         default:
             break;
     }
+#endif
     return state;
 }
 
